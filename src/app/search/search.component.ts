@@ -6,11 +6,24 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./search.component.html"
 })
 export class SearchComponent implements OnInit {
-    constructor() {
-        // Use the constructor to inject services.
+    val1: string;
+
+    result: number;
+
+    changeOperator(e) {
+
+        this.calculate(null);
     }
 
-    ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
+    ngOnInit() {
+        this.val1 =  "";
+    }
+
+    calculate(e) {
+        console.log(e);
+        console.log(this.val1);
+
+        this.result = (Number(this.val1) * Number(this.val1) + Number(this.val1) + 2) / 2;
+
     }
 }
