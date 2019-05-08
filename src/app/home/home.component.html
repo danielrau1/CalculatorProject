@@ -3,9 +3,26 @@
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <ListView [items]="items" class="list-group">
-        <ng-template let-item="item">
-            <Label [nsRouterLink]="['../item', item.id]" [text]="item.name" class="list-group-item"></Label>
-        </ng-template>
-    </ListView>
+    <Label class="action-bar-title" text="Home"></Label>
 </GridLayout>
+
+<StackLayout>
+    <TextField
+            [(ngModel)]="val1"
+            hint="Enter a number"
+            (ngModelChange)="calculate()"
+            keyboardType="number"
+            autocorrect="false"
+    ></TextField>
+
+    <ListPicker [items]="operations" selectedIndex="0" (selectedIndexChange)="changeOperator($event)"></ListPicker>
+
+    <TextField
+            [(ngModel)]="val2"
+            hint="Enter a number"
+            (ngModelChange)="calculate()"
+            keyboardType="number"
+            autocorrect="false"
+    ></TextField>
+    <Label [text]="result"></Label>
+</StackLayout>
