@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 @Component({
     selector: "Browse",
@@ -6,12 +7,25 @@ import { Component, OnInit } from "@angular/core";
     templateUrl: "./browse.component.html"
 })
 export class BrowseComponent implements OnInit {
-    constructor() {
-        // Use the component constructor to inject providers.
+    val1: string;
+    val2: string;
+    result: number;
+
+    changeOperator(e) {
+
+        this.calculate(null);
     }
 
-    ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
-        console.log("Chwck cehek");
+    ngOnInit() {
+        this.val1 = this.val2 = "";
     }
-}
+
+    calculate(e) {
+        console.log(e);
+        console.log(this.val1);
+        console.log(this.val2);
+
+        this.result = Number(this.val1) * Number(this.val2) / 100;
+
+        }
+    }

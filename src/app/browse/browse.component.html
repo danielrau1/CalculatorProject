@@ -1,8 +1,28 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Tips"></Label>
+    <Label class="action-bar-title" text="Browse"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <Label class="page-icon fa" text="&#xf1ea;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+    <Label class="action-bar-title" text="Browse"></Label>
 </GridLayout>
+
+<StackLayout>
+    <TextField
+            [(ngModel)]="val1"
+            hint="Enter a number"
+            (ngModelChange)="calculate()"
+            keyboardType="number"
+            autocorrect="false"
+    ></TextField>
+
+
+
+    <TextField
+            [(ngModel)]="val2"
+            hint="Enter a number"
+            (ngModelChange)="calculate()"
+            keyboardType="number"
+            autocorrect="false"
+    ></TextField>
+    <Label [text]="result"></Label>
+</StackLayout>
