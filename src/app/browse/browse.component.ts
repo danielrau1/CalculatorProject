@@ -9,7 +9,9 @@ import { ListPicker } from "tns-core-modules/ui/list-picker";
 export class BrowseComponent implements OnInit {
     val1: string;
     val2: string;
+    val3: string;
     result: number;
+    result1: number;
 
     changeOperator(e) {
 
@@ -26,6 +28,7 @@ export class BrowseComponent implements OnInit {
         console.log(this.val2);
 
         this.result = Number(this.val1) * Number(this.val2) / 100;
+        this.result1 = this.result / Number(this.val3);
 
         }
     }

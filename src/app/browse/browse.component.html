@@ -9,7 +9,7 @@
 <StackLayout>
     <TextField
             [(ngModel)]="val1"
-            hint="Enter a number"
+            hint="Total bill"
             (ngModelChange)="calculate()"
             keyboardType="number"
             autocorrect="false"
@@ -19,10 +19,24 @@
 
     <TextField
             [(ngModel)]="val2"
-            hint="Enter a number"
+            hint="Enter tip %"
             (ngModelChange)="calculate()"
             keyboardType="number"
             autocorrect="false"
     ></TextField>
+
+
+
+    <TextField
+            [(ngModel)]="val3"
+            hint="Enter a number of people"
+            (ngModelChange)="calculate()"
+            keyboardType="number"
+            autocorrect="false"
+    ></TextField>
+
     <Label [text]="result"></Label>
+
+    <Label [text]="result1"></Label>
+
 </StackLayout>
